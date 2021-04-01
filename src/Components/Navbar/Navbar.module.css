@@ -1,0 +1,25 @@
+.NavLink {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #F5F5F5;
+}
+
+.Button {
+    width: 100px;
+    text-decoration: none;
+    border: none !important;
+    border-radius: 50px !important;
+}
+
+.Button:focus,
+.Button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.ButtonJoin {
+    background: #FFCC57 !important;
+}
+.ButtonLogin {
+    background: #F5F5F5 !important;
+}
