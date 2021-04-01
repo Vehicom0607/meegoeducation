@@ -2,3 +2,23 @@
     background: linear-gradient(to right, #82DBFF, #519ADF);
 }
 
+
+
+.Button {
+    padding: 10px 15px!important;
+    text-decoration: none;
+    border: none !important;
+    border-radius: 50px !important;
+    color: #F5F5F5 !important;
+}
+
+.Button:focus,
+.Button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.ViewCourseButton {
+    margin: 0 0 25px 0;
+
+}
