@@ -15,7 +15,7 @@ const responsive = {
         items: 1,
     }
 };
-const colors = ["red", "green", "blue", "orange", "yellow", "purple", "pink", "violet"];
+const colors = ["red", "green", "blue", "orange", "yellow", "purple", "pink", "violet", "navy blue"];
 
 
 
