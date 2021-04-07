@@ -16,7 +16,7 @@ class IndexPage extends Component {
                 <div className={classes.BgHeader}>
                     <MeeGoNavbar />
                     <Container>
-                        <Row md="!">
+                        <Row  md="2" xs="1">
                             <Col>
                                 <p className="text-white display-4 text-left font-weight-bold">Learn Together,</p>
                                 <p className="text-white display-4 text-left font-weight-bold">Grow Together.</p>
@@ -26,7 +26,7 @@ class IndexPage extends Component {
                                 </span>
                             </Col>
                             <Col>
-                                <Image  alt="Man holding something idk" src="/Index/header1.png"/>
+                                <Image className={classes.HeaderImage} alt="Man holding something idk" src="/Index/header1.png"/>
                             </Col>
                         </Row>
                     </Container>

@@ -1,5 +1,6 @@
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css'
+import CourseCard from "../../../Components/CourseCard/CourseCard";
 
 const responsive = {
     desktop: {
@@ -15,28 +16,41 @@ const responsive = {
         items: 1,
     }
 };
-const colors = ["red", "green", "blue", "orange", "yellow", "purple", "pink", "violet", "navy blue"];
+const courses = [
+    {
+        title: 'Java Beginner',
+        minAge: 8,
+        maxAge: 12,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        uid: 1
+    }
+];
 
 
 
 const IndexCarousel = ({ deviceType }) => {
     return (
         <Carousel
+            style={{display: 'flex', flexDirection: 'row'}}
             partialVisbile
             deviceType={deviceType}
             itemClass="image-item"
             responsive={responsive}
             removeArrowOnDeviceType={["tablet", "mobile"]}
         >
-            {colors.map(color => {
+            {courses.map(course => {
                 return (
-                    <div key={color} style={{ background: color, width: 300, height: 300 }}>
-                        hello
-                    </div>
-                );
+                    <CourseCard title={course.title}
+                                path={''} key={course.uid}
+                                minAge={course.minAge}
+                                maxAge={course.maxAge}
+                                description={course.description}
+
+                                />
+                )
             })}
         </Carousel>
     );
-};
+}
 
 export default IndexCarousel;
