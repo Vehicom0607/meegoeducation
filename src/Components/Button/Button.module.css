@@ -1,0 +1,36 @@
+.Button {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+
+
+.Button:hover {
+    text-decoration: none;
+}
+
+.Yellow {
+    background: #FFCC57;
+    color: #F5F5F5;
+}
+.Yellow:hover {
+    background: #e3b64d;
+    color: #F5F5F5;
+}
+
+.Red {
+    background: #FF596C;
+    color: #F5F5F5;
+}
+
+.Gradient {
+    background: linear-gradient(to right, #82DBFF, #519ADF);
+    color: #F5F5F5;
+}
+.Gradient:hover {
+    color: #F5F5F5;
+    background: linear-gradient(to right, #75C6E6, #32618C);
+}

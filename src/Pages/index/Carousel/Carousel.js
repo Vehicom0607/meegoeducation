@@ -19,10 +19,12 @@ const responsive = {
 const courses = [
     {
         title: 'Java Beginner',
+        imgLink: 'https://meegoimages.s3.us-east-2.amazonaws.com/scratch1.png',
         minAge: 8,
         maxAge: 12,
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        uid: 1
+        uid: 1,
+        path: '/courses/JavaBeginner'
     }
 ];
 
@@ -41,11 +43,12 @@ const IndexCarousel = ({ deviceType }) => {
             {courses.map(course => {
                 return (
                     <CourseCard title={course.title}
-                                path={''} key={course.uid}
+                                key={course.uid}
                                 minAge={course.minAge}
                                 maxAge={course.maxAge}
                                 description={course.description}
-
+                                imgLink={course.imgLink}
+                                path={course.path}
                                 />
                 )
             })}

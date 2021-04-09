@@ -3,4 +3,15 @@
 
 .Card {
     flex: 1;
+    width: 275px;
 }
+
+.Title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Heart {
+    margin-top: 5px;
+}
+

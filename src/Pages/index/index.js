@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import MeeGoNavbar from "../../Components/Navbar/Navbar";
 import classes from './index.module.css'
-import {Button, Col, Container, Image, Row} from "react-bootstrap";
+import {Col, Container, Image, Row} from "react-bootstrap";
 import IndexCarousel from "./Carousel/Carousel";
+import MeeGoButton from "../../Components/Button/Button";
 class IndexPage extends Component {
 
     componentDidMount() {
@@ -22,7 +23,7 @@ class IndexPage extends Component {
                                 <p className="text-white display-4 text-left font-weight-bold">Grow Together.</p>
                                 <p className="text-white text-left">Enrichment courses with engaging teachers for a stimulating learning experience.</p>
                                 <span style={{display:"flex", justifyContent:"flex-start", width:"100%", padding:"0"}}>
-                                <Button variant="warning" className={classes.Button + " " + classes.ViewCourseButton}>VIEW COURSES</Button>
+                                <MeeGoButton path="/courses" ReactLink color="yellow">VIEW COURSES</MeeGoButton>
                                 </span>
                             </Col>
                             <Col>
