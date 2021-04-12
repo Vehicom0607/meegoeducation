@@ -12,6 +12,13 @@ const MeeGoButton = props => {
     }  else if (props.color === 'gradient') {
     ButtonClasses.push(classes.Gradient)
     }
+    if (props.mr) {
+        ButtonClasses.push("mr-auto")
+    }
+    if (props.ml) {
+        ButtonClasses.push("ml-auto")
+    }
+
     if (props.ReactLink) {
         Button = <Link to={props.path} className={ButtonClasses.join(" ")}>{props.children}</Link>
     } else {

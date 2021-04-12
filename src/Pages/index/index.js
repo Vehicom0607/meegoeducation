@@ -32,7 +32,7 @@ class IndexPage extends Component {
                         </Row>
                     </Container>
                 </div>
-                <Container>
+                <Container className="my-5">
                     <IndexCarousel />
                 </Container>
             </div>

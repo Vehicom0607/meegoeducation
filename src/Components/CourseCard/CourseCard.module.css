@@ -3,7 +3,9 @@
 
 .Card {
     flex: 1;
-    width: 275px;
+    width: 100%;
+    box-sizing: border-box;
+
 }
 
 .Title {
@@ -15,3 +17,11 @@
     margin-top: 5px;
 }
 
+.ButtonDiv {
+    display: flex;
+    justify-content: end;
+}
+
+.Div {
+    padding: 0 5px;
+}

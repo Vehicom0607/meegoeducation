@@ -11,18 +11,22 @@ const CourseCard = props => {
     )
 
     return (
-        <Card className={classes.Card + " text-left"}>
-            <Card.Img alt="Course Card" src={props.imgLink} />
-            <Card.Body>
-                <Card.Title
-                    className={classes.Title}>{props.title}
-                    {heart}
-                </Card.Title>
-                <Card.Text>Ages {props.minAge + "-" + props.maxAge}</Card.Text>
-                <Card.Text>{props.description}</Card.Text>
-                <MeeGoButton color="gradient" ReactLink to={props.path}>VIEW COURSE</MeeGoButton>
-            </Card.Body>
-        </Card>
+        <div className={classes.Div}>
+            <Card className={classes.Card + " text-left"}>
+                <Card.Img alt="Course Card" src={props.imgLink} />
+                <Card.Body>
+                    <Card.Title
+                        className={classes.Title}>{props.title}
+                        {heart}
+                    </Card.Title>
+                    <Card.Text>Ages {props.minAge + "-" + props.maxAge}</Card.Text>
+                    <Card.Text>{props.description}</Card.Text>
+                    <div className={classes.ButtonDiv}>
+                        <MeeGoButton ml color="gradient" ReactLink to={props.path}>VIEW COURSE</MeeGoButton>
+                    </div>
+                </Card.Body>
+            </Card>
+        </div>
     );
 }
 
