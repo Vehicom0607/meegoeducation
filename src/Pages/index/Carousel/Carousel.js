@@ -9,11 +9,11 @@ const responsive = {
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 2,
+        items: 3,
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
-        items: 1,
+        items: 2,
     }
 };
 const courses = [
@@ -87,12 +87,11 @@ const courses = [
 const IndexCarousel = ({ deviceType }) => {
     return (
         <Carousel
-            style={{display: 'flex', flexDirection: 'row'}}
-            partialVisbile
             deviceType={deviceType}
             itemClass="image-item"
             responsive={responsive}
             removeArrowOnDeviceType={["tablet", "mobile"]}
+            infinite
         >
             {courses.map(course => {
                 return (

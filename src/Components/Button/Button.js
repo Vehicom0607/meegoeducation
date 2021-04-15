@@ -18,11 +18,17 @@ const MeeGoButton = props => {
     if (props.ml) {
         ButtonClasses.push("ml-auto")
     }
+    if (props.mt) {
+        ButtonClasses.push("mt-auto")
+    }
+    if (props.mb) {
+        ButtonClasses.push("mb-auto")
+    }
 
     if (props.ReactLink) {
-        Button = <Link to={props.path} className={ButtonClasses.join(" ")}>{props.children}</Link>
+        Button = <Link to={props.path}  className={ButtonClasses.join(" ")}>{props.children}</Link>
     } else {
-        Button = <a href={props.path} className={ButtonClasses.join(" ")}>{props.children}</a>
+        Button = <a href={props.path}  className={ButtonClasses.join(" ")}>{props.children}</a>
     }
 
     return Button
