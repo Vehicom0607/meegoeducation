@@ -101,7 +101,7 @@ class IndexPage extends Component {
                     </div>
                     <section className="py-5">
                         <Row xs="1" md="2">
-                            <Col>
+                            <Col md="12" lg="4">
                                 <div className={classes.VarietyCourses}>
                                     <div style={{padding: '0 20px'}} className="text-left">
                                         <h2 className={classes.Text}>A Variety of Courses</h2>
@@ -113,79 +113,124 @@ class IndexPage extends Component {
                                     </div>
                                 </div>
                             </Col>
-                            <Col>
-                                <div className={classes.CourseSection}>
-                                    <div className={classes.CourseSectionSection}>
-                                        <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-1-blue@2x.png" />
-                                        <div style={{paddingTop: '10px'}}>
-                                            <p className={classes.CourseTitle}>English</p>
-                                            <p>Phonics</p>
-                                            <p>Early Writing</p>
-                                            <p>Wordly Wise 3000</p>
-                                            <p>Creative Writing</p>
-                                            <p>Literature Writing</p>
-                                            <p>Specific Writing Topic</p>
-                                            <p>Reading + Essay Writing</p>
-                                            <p>Public speaking</p>
-                                            <p>Debate</p>
+                            <Col md="12" lg="8" >
+                                <div className={classes.CourseSectionBigSection}>
+                                    <div className={classes.CourseSection}>
+                                        <div className={classes.CourseSectionSection}>
+                                            <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-1-blue@2x.png" />
+                                            <div style={{paddingTop: '10px'}}>
+                                                <p className={classes.CourseTitle}>English</p>
+                                                <p>Early Writing</p>
+                                                <p>Wordly Wise 3000</p>
+                                                <p>Creative Writing</p>
+                                                <p>Literature Writing</p>
+                                                <p>Specific Writing Topic</p>
+                                                <p>Reading + Essay Writing</p>
+                                                <p>Public speaking</p>
+                                                <p>Debate</p>
+                                            </div>
+                                        </div>
+                                        <div className={classes.CourseSectionSection}>
+                                            <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/tutor-icon-9-blue@2x.png" />
+                                            <div style={{paddingTop: '10px'}}>
+                                                <p className={classes.CourseTitle}>Math</p>
+                                                <p>Beast Academy</p>
+                                                <p>Beast Academy II</p>
+                                                <p>School Math</p>
+                                                <p>Math Competition</p>
+                                                <p>Chemistry</p>
+                                                <p>Physics</p>
+                                            </div>
+                                        </div>
+                                        <div className={classes.CourseSectionSection}>
+                                            <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-8-blue@2x.png" />
+                                            <div style={{paddingTop: '10px'}}>
+                                                <p className={classes.CourseTitle}>Life Style</p>
+                                                <p>Fitness | Yoga</p>
+                                                <p>Chess</p>
+                                                <p>Photography</p>
+                                                <p>Singing</p>
+                                                <p>Cooking|Baking</p>
+                                            </div>
+                                        </div>
+                                        <div className={classes.CourseSectionSection}>
+                                            <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-5-blue@2x.png" />
+                                            <div style={{paddingTop: '10px'}}>
+                                                <p className={classes.CourseTitle}>Coding & Tech</p>
+                                                <p>Scratch</p>
+                                                <p>Python</p>
+                                                <p>Artificial Intelligence</p>
+                                                <p>Java</p>
+                                                <p>USACO</p>
+                                                <p>Animation</p>
+                                                <p>Game Design</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className={classes.CourseSectionSection}>
-                                        <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/tutor-icon-9-blue@2x.png" />
-                                        <div style={{paddingTop: '10px'}}>
-                                            <p className={classes.CourseTitle}>Math</p>
-                                            <p>Beast Academy</p>
-                                            <p>Beast Academy II</p>
-                                            <p>School Math</p>
-                                            <p>Math Competition</p>
-                                            <p>Chemistry</p>
-                                            <p>Physics</p>
+                                    <div style={{textAlign: 'left'}}>
+                                        <div className={classes.CourseSectionSection}>
+                                            <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-5-blue@2x.png" />
+                                            <div style={{paddingTop: '10px'}}>
+                                                <p className={classes.CourseTitle}>Coding & Tech</p>
+                                                <p>Scratch</p>
+                                                <p>Python</p>
+                                                <p>Artificial Intelligence</p>
+                                                <p>Java</p>
+                                                <p>USACO</p>
+                                                <p>Animation</p>
+                                                <p>Game Design</p>
+                                                <p>Legos</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className={classes.CourseSectionSection}>
-                                        <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-8-blue@2x.png" />
-                                        <div style={{paddingTop: '10px'}}>
-                                            <p className={classes.CourseTitle}>Life Style</p>
-                                            <p>Fitness | Yoga</p>
-                                            <p>Chess</p>
-                                            <p>Photography</p>
-                                            <p>Singing</p>
-                                            <p>Cooking|Baking</p>
+                                        <div className={classes.CourseSectionSection}>
+                                            <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-6-blue@2x.png" />
+                                            <div style={{paddingTop: '10px'}}>
+                                                <p className={classes.CourseTitle}>Art</p>
+                                                <p>Illustrator</p>
+                                                <p>Comics</p>
+                                                <p>Fun Ink Painting</p>
+                                                <p>Portrait Drawing</p>
+                                                <p>Line Drawing</p>
+                                                <p>Coloring</p>
+                                                <p>Sketching</p>
+                                                <p>Video Editing</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className={classes.CourseSectionSection}>
-                                        <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-5-blue@2x.png" />
-                                        <div style={{paddingTop: '10px'}}>
-                                            <p className={classes.CourseTitle}>Coding & Tech</p>
-                                            <p>Scratch</p>
-                                            <p>Python</p>
-                                            <p>Artificial Intelligence</p>
-                                            <p>Java</p>
-                                            <p>USACO</p>
-                                            <p>Animation</p>
-                                            <p>Game Design</p>
-                                            <p>Legos</p>
-                                        </div>
-                                    </div>
-                                    <div className={classes.CourseSectionSection}>
-                                        <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-5-blue@2x.png" />
-                                        <div style={{paddingTop: '10px'}}>
-                                            <p className={classes.CourseTitle}>Coding & Tech</p>
-                                            <p>Scratch</p>
-                                            <p>Python</p>
-                                            <p>Artificial Intelligence</p>
-                                            <p>Java</p>
-                                            <p>USACO</p>
-                                            <p>Animation</p>
-                                            <p>Game Design</p>
-                                            <p>Legos</p>
+                                        <div className={classes.CourseSectionSection + " text-left"}>
+                                            <img style={{marginRight: '10px'}} height="60" width="60" alt="light bulb" src="./Index/Temp/icon-10-blue@2x.png" />
+                                            <div style={{paddingTop: '10px'}}>
+                                                <p className={classes.CourseTitle}>Coding & Tech</p>
+                                                <p>Stocks and investments</p>
+                                                <p>Wharton Business Competition</p>
+                                                <p>Youth MBA</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </Col>
                         </Row>
                     </section>
+                    <section className={classes.GetStarted}>
+                        <div>
+                            <h2 style={{color: '#FFCC57'}}>Ready To Get Started?</h2>
+                            <p style={{color: '#707070'}}>Create an account and try a <b>FREE</b> course</p>
+                        </div>
+                        <div className={classes.TwoButtons}>
+                            <MeeGoButton ReactLink color="gradient">TRY FOR FREE</MeeGoButton>
+                            <MeeGoButton ReactLink color="red">CONTACT US</MeeGoButton>
+                        </div>
+                    </section>
                 </Container>
+                <footer className={classes.Footer}>
+                    <Row style={{margin: 0}}>
+                        <Col>
+                            <p>Contact Us</p>
+                        </Col>
+                        <Col>
+                            <p>idk i'll add stuff lateri</p>
+                        </Col>
+                    </Row>
+                </footer>
             </div>
         );
     }

@@ -26,9 +26,9 @@ const MeeGoButton = props => {
     }
 
     if (props.ReactLink) {
-        Button = <Link to={props.path}  className={ButtonClasses.join(" ")}>{props.children}</Link>
+        Button = <Link to={props.path} style={props.style} className={ButtonClasses.join(" ")}>{props.children}</Link>
     } else {
-        Button = <a href={props.path}  className={ButtonClasses.join(" ")}>{props.children}</a>
+        Button = <a href={props.path} style={props.style} className={ButtonClasses.join(" ")}>{props.children}</a>
     }
 
     return Button

@@ -8,7 +8,8 @@
     background: #ffffff;
 }
 .BgGradient {
-    background: linear-gradient(to right, #82DBFF, #519ADF);}
+    background: linear-gradient(to right, #82DBFF, #519ADF);
+}
 
 .Card {
     padding: 20px;
@@ -48,7 +49,7 @@
     height: 700px;
     background: url("./images/bg2.png") no-repeat;
     background-size: 150% 100%;
-    background-position-x: -275px;
+    background-position-x: 100%;
     display: flex;
     align-items: center;
 }
@@ -59,10 +60,50 @@
     color: #707070;
     font-size: 16px;
     text-align: left;
-    line-height: 16px;
+    line-height: 14px;
 }
 
 .CourseSectionSection {
     display: flex;
     flex-direction: row;
 }
+
+.CourseSectionBigSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.GetStarted {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.TwoButtons {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Footer {
+    background: linear-gradient(to right, #82DBFF, #519ADF);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .CourseSectionBigSection {
+        flex-direction: column;
+    }
+    .GetStarted {
+        flex-direction: column;
+    }
+    .TwoButtons {
+        width: 100%;
+    }
+}
+
+
+
