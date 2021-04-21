@@ -16,93 +16,29 @@ const responsive = {
         items: 2,
     }
 };
-const courses = [
-    {
-        title: 'Java Beginner',
-        imgLink: 'https://meegoimages.s3.us-east-2.amazonaws.com/scratch1.png',
-        minAge: 8,
-        maxAge: 12,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        uid: 1,
-        path: '/courses/JavaBeginner'
-    },
-    {
-        title: 'Java Beginner',
-        imgLink: 'https://meegoimages.s3.us-east-2.amazonaws.com/scratch1.png',
-        minAge: 8,
-        maxAge: 12,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        uid: 1,
-        path: '/courses/JavaBeginner'
-    },
-    {
-        title: 'Java Beginner',
-        imgLink: 'https://meegoimages.s3.us-east-2.amazonaws.com/scratch1.png',
-        minAge: 8,
-        maxAge: 12,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        uid: 1,
-        path: '/courses/JavaBeginner'
-    },
-    {
-        title: 'Java Beginner',
-        imgLink: 'https://meegoimages.s3.us-east-2.amazonaws.com/scratch1.png',
-        minAge: 8,
-        maxAge: 12,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        uid: 1,
-        path: '/courses/JavaBeginner'
-    },
-    {
-        title: 'Java Beginner',
-        imgLink: 'https://meegoimages.s3.us-east-2.amazonaws.com/scratch1.png',
-        minAge: 8,
-        maxAge: 12,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        uid: 1,
-        path: '/courses/JavaBeginner'
-    },
-    {
-        title: 'Java Beginner',
-        imgLink: 'https://meegoimages.s3.us-east-2.amazonaws.com/scratch1.png',
-        minAge: 8,
-        maxAge: 12,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        uid: 1,
-        path: '/courses/JavaBeginner'
-    },
-    {
-        title: 'Java Beginner',
-        imgLink: 'https://meegoimages.s3.us-east-2.amazonaws.com/scratch1.png',
-        minAge: 8,
-        maxAge: 12,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        uid: 1,
-        path: '/courses/JavaBeginner'
-    }
-];
 
 
-
-const IndexCarousel = ({ deviceType }) => {
+const IndexCarousel = (props) => {
     return (
         <Carousel
-            deviceType={deviceType}
             itemClass="image-item"
             responsive={responsive}
             removeArrowOnDeviceType={["tablet", "mobile"]}
             infinite
         >
-            {courses.map(course => {
+            {props.courses.map(course => {
+                let courseData = course[Object.keys(course)[0]]
+                console.log(courseData)
+
                 return (
-                    <CourseCard title={course.title}
-                                key={course.uid}
-                                minAge={course.minAge}
-                                maxAge={course.maxAge}
-                                description={course.description}
-                                imgLink={course.imgLink}
-                                path={course.path}
-                                />
+                    <CourseCard title={courseData.title}
+                                key={courseData.title}
+                                minAge={courseData.minAge}
+                                maxAge={courseData.maxAge}
+                                description={courseData.description}
+                                imgLink={courseData.imgLink}
+                                path={courseData.path}
+                    />
                 )
             })}
         </Carousel>

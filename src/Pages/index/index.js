@@ -4,10 +4,14 @@ import classes from './index.module.css'
 import {Col, Container, Image, Row} from "react-bootstrap";
 import IndexCarousel from "./Carousel/Carousel";
 import MeeGoButton from "../../Components/Button/Button";
+import * as actions from '../../store/actions'
+import {connect} from "react-redux";
+
 class IndexPage extends Component {
 
     componentDidMount() {
         document.title = "MeeGo Education"
+        this.props.getCourses()
     }
 
 
@@ -33,7 +37,7 @@ class IndexPage extends Component {
                     </Container>
                 </div>
                 <Container className="my-5">
-                    <IndexCarousel />
+                    <IndexCarousel courses={this.props.courses.courseData} />
                     <section className="my-5">
                         <h2 style={{color: '#707070'}}>Free Courses</h2>
                         <div className={classes.Card + " " + classes.BgWhite}>
@@ -236,5 +240,16 @@ class IndexPage extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        courses: state.courses
+    }
+}
+const mapDispatchtoProps = (dispatch) => {
+    return {
+        getCourses: () => dispatch(actions.getCourses())
+    }
+}
 
-export default IndexPage;
+
+export default connect(mapStateToProps, mapDispatchtoProps)(IndexPage);
