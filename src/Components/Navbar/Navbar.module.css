@@ -2,6 +2,7 @@
     display: block;
     padding: 0.5rem 1rem;
     color: #F5F5F5;
+    text-decoration: none !important;
 }
 
 .Button {

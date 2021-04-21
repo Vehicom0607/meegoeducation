@@ -11,18 +11,14 @@ const MeeGoButton = props => {
         ButtonClasses.push(classes.Red)
     }  else if (props.color === 'gradient') {
     ButtonClasses.push(classes.Gradient)
+    } else if (props.color === 'white') {
+        ButtonClasses.push(classes.White)
     }
-    if (props.mr) {
-        ButtonClasses.push("mr-auto")
+    if (props.AddClass) {
+        ButtonClasses.push(props.AddClass)
     }
-    if (props.ml) {
-        ButtonClasses.push("ml-auto")
-    }
-    if (props.mt) {
-        ButtonClasses.push("mt-auto")
-    }
-    if (props.mb) {
-        ButtonClasses.push("mb-auto")
+    if (props.slim) {
+        ButtonClasses.push(classes.Slim)
     }
 
     if (props.ReactLink) {

@@ -113,7 +113,7 @@ class IndexPage extends Component {
                                             <br/><br/>
                                             We can’t wait to have you join us!
                                         </p>
-                                        <MeeGoButton ReactLink to="/courses" color="yellow" >VIEW COURSES</MeeGoButton>
+                                        <MeeGoButton ReactLink path="/courses" color="yellow" >VIEW COURSES</MeeGoButton>
                                     </div>
                                 </div>
                             </Col>
@@ -220,8 +220,8 @@ class IndexPage extends Component {
                             <p style={{color: '#707070'}}>Create an account and try a <b>FREE</b> course</p>
                         </div>
                         <div className={classes.TwoButtons}>
-                            <MeeGoButton ReactLink color="gradient">TRY FOR FREE</MeeGoButton>
-                            <MeeGoButton ReactLink color="red">CONTACT US</MeeGoButton>
+                            <MeeGoButton ReactLink color="gradient" path="/courses">TRY FOR FREE</MeeGoButton>
+                            <MeeGoButton ReactLink color="red" path="/contact">CONTACT US</MeeGoButton>
                         </div>
                     </section>
                 </Container>
@@ -231,7 +231,7 @@ class IndexPage extends Component {
                             <p>Contact Us</p>
                         </Col>
                         <Col>
-                            <p>idk i'll add stuff lateri</p>
+                            <p>idk i'll add stuff later</p>
                         </Col>
                     </Row>
                 </footer>

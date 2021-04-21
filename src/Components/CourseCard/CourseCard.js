@@ -22,7 +22,7 @@ const CourseCard = props => {
                     <Card.Text>Ages {props.minAge + "-" + props.maxAge}</Card.Text>
                     <Card.Text>{props.description}</Card.Text>
                     <div className={classes.ButtonDiv}>
-                        <MeeGoButton ml color="gradient" ReactLink to={props.path}>VIEW COURSE</MeeGoButton>
+                        <MeeGoButton ml color="gradient" ReactLink path={props.path}>VIEW COURSE</MeeGoButton>
                     </div>
                 </Card.Body>
             </Card>

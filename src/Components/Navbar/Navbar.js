@@ -1,27 +1,26 @@
 import React from 'react';
-import {Navbar, Nav, Button} from "react-bootstrap";
+import {Navbar, Nav} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import classes from './Navbar.module.css'
+import MeeGoButton from "../Button/Button";
 
 
 
 const MeeGoNavbar = () => {
-    const JoinStyle = ["d-lg-block", "d-none", "mx-2", classes.Button, classes.ButtonJoin]
     const JoinLoginStyleMobile = ["d-block", "d-lg-none", classes.NavLink]
-    const LoginStyle = ["d-lg-block", "d-none", "mx-2", classes.Button, classes.ButtonLogin]
     return (
         <Navbar collapseOnSelect expand="lg" variant="light" className="px-lg-5">
             <Navbar.Brand><Link to="/"><img alt="logo" src="/Navbar/logo.png" height="60"/></Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
-                    <Link className={classes.NavLink}>Courses</Link>
-                    <Link className={classes.NavLink}>Blog</Link>
-                    <Link className={classes.NavLink}>About</Link>
-                    <Link className={JoinLoginStyleMobile.join(" ")}>Join</Link>
-                    <Link className={JoinLoginStyleMobile.join(" ")}>Login</Link>
-                    <Button className={JoinStyle.join(" ")}><Link style={{color: '#F5F5F5'}}>Join</Link></Button>
-                    <Button className={LoginStyle.join(" ")}><Link style={{color: '#4691D9'}}>Login</Link></Button>
+                    <Link className={classes.NavLink} to="/courses">Courses</Link>
+                    <Link className={classes.NavLink} to="/blog">Blog</Link>
+                    <Link className={classes.NavLink} to="/about">About</Link>
+                    <Link className={JoinLoginStyleMobile.join(" ")} to="/auth">Join</Link>
+                    <Link className={JoinLoginStyleMobile.join(" ")} to="/auth">Login</Link>
+                    <MeeGoButton style={{margin: '0px 5px'}} color="yellow" slim ReactLink path="/auth">Join</MeeGoButton>
+                    <MeeGoButton style={{margin: '0px 5px'}} color="white"  slim ReactLink path="/auth">Login</MeeGoButton>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

@@ -1,0 +1,17 @@
+.BgGradient {
+    background: linear-gradient(to right, #82DBFF, #519ADF);
+}
+
+.HeaderTitle {
+    color: #F5F5F5;
+    font-weight: 600;
+}
+
+.HeaderText {
+    color: #F5F5F5;
+    text-align: left;
+}
+
+.ExtraPadding {
+    padding-bottom: 10rem;
+}

@@ -1,11 +1,16 @@
 .Button {
     font-weight: 500;
     font-size: 16px;
-    padding: 15px 20px;
     border-radius: 25px;
     text-decoration: none;
+    padding: 15px 20px;
 }
 
+.Slim{
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+}
 
 
 .Button:hover {
@@ -25,6 +30,11 @@
     background: #FF596C;
     color: #F5F5F5;
 }
+.Red:hover {
+    background: #FF596C;
+    color: #F5F5F5;
+}
+
 
 .Gradient {
     background: linear-gradient(to right, #82DBFF, #519ADF);
@@ -35,3 +45,11 @@
     background: linear-gradient(to right, #75C6E6, #32618C);
 }
 
+.White {
+    background-color: #F5F5F5;
+    color: #4691D9;
+}
+.White:hover {
+    background-color: #cfcfcf;
+    color: #4691D9;
+}
