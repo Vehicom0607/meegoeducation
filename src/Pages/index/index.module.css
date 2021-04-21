@@ -92,6 +92,10 @@
     background: linear-gradient(to right, #82DBFF, #519ADF);
     margin: 0;
 }
+/* Hi future me, fuck you i'm calling this class Yeet  */
+.Yeet {
+    flex-direction: row
+}
 
 @media (max-width: 768px) {
     .CourseSectionBigSection {
@@ -103,7 +107,8 @@
     .TwoButtons {
         width: 100%;
     }
+    .Yeet {
+    }
 }
-
 
 
