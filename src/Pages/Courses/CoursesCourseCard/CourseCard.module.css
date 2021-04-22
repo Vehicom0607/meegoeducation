@@ -1,0 +1,19 @@
+.Card {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px 0 #70707020;
+}
+
+.CardTop {
+
+}
+
+.CardBottom {
+
+}
