@@ -12,6 +12,7 @@ class CoursesPage extends Component {
     }
 
     render() {
+        //TODO CHANGE CoursesCourseCard TO USE FIREBASE INSTEAD OF HARD CODED
         return (
             <div>
                 <div className={classes.BgGradient}>
@@ -20,7 +21,13 @@ class CoursesPage extends Component {
                         <h1 className={classes.HeaderTitle}>Our Courses</h1>
                         <p className={classes.HeaderText}>Pandente itaque viam fatorum sorte tristissima, qua praestitutum erat eum vita et imperio spoliari, itineribus interiectis  iumenjor emensis venit Petobionem oppidum Noricorum.</p>
                         <div style={{position: 'relative'}}>
-                            <CoursesCourseCard />
+                            <div style={{position: 'absolute'}}>
+                                <CoursesCourseCard course={'English'} description={"Pandente itaque viam fatorum sorte tristissima, qua praestitutum erat eum vita et imperio spoliari, itineribus interiectis  iumenjor emensis venit Petobionem oppidum Noricorum."} numCourses={9} />
+                                <CoursesCourseCard course={'English'} description={"Pandente itaque viam fatorum sorte tristissima, qua praestitutum erat eum vita et imperio spoliari, itineribus interiectis  iumenjor emensis venit Petobionem oppidum Noricorum."} numCourses={9} />
+                                <CoursesCourseCard course={'English'} description={"Pandente itaque viam fatorum sorte tristissima, qua praestitutum erat eum vita et imperio spoliari, itineribus interiectis  iumenjor emensis venit Petobionem oppidum Noricorum."} numCourses={9} />
+                                <CoursesCourseCard course={'English'} description={"Pandente itaque viam fatorum sorte tristissima, qua praestitutum erat eum vita et imperio spoliari, itineribus interiectis  iumenjor emensis venit Petobionem oppidum Noricorum."} numCourses={9} />
+                                <CoursesCourseCard course={'English'} description={"Pandente itaque viam fatorum sorte tristissima, qua praestitutum erat eum vita et imperio spoliari, itineribus interiectis  iumenjor emensis venit Petobionem oppidum Noricorum."} numCourses={9} />
+                            </div>
                         </div>
                     </Container>
                 </div>

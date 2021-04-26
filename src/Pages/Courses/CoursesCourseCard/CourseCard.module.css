@@ -1,8 +1,8 @@
 .Card {
-    position: absolute;
+    margin: 25px;
     width: 100%;
     text-align: left;
-    padding: 10px 25px;
+    padding: 15px 25px;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
