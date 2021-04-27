@@ -1,8 +1,8 @@
-const store = {
+const startupStore = {
     courses: {
         loading: false,
         courseData: [],
         error: null
     }
 }
-export default store
+export default startupStore

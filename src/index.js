@@ -6,12 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import {createStore, applyMiddleware, compose} from "redux";
 import thunk from "redux-thunk";
-import reducer from "./store/reducer";
+import startupReducer from "./store/reducers/StartupReducer";
 import {BrowserRouter} from "react-router-dom";
 import './MeeGoBootstrap.scss'
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ?  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
-const store = createStore(reducer, composeEnhancers(
+const store = createStore(startupReducer, composeEnhancers(
     applyMiddleware(thunk)
 ));
 

@@ -3,6 +3,7 @@ import * as actionTypes from './actionTypes'
 
 export const getCourses = () => {
     return dispatch => {
+        dispatch(getCourseStart())
         axios.get("https://meegoeducation-da33a-default-rtdb.firebaseio.com/courses.json")
             .then(response => {
                 dispatch(getCourseSuccess(response))

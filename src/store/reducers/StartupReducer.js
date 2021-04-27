@@ -1,10 +1,8 @@
-import * as actionTypes from './actionTypes'
-import store from "./store";
+import * as actionTypes from '../actions/actionTypes'
+import startupStore from "./StartupStore";
 
-const reducer = (state = store, action) => {
+const startupReducer = (state = startupStore, action) => {
     switch (action.type) {
-        case actionTypes.ON_PAGE_LOAD:
-            return state
         case actionTypes.GET_COURSE_START:
             return {
                 ...state,
@@ -15,7 +13,7 @@ const reducer = (state = store, action) => {
                 }
             }
         case actionTypes.GET_COURSE_SUCCESS:
-            const newCourseData = state.courses.courseData
+            const newCourseData = []
             newCourseData.push(action.courseData)
             return {
                 ...state,
@@ -41,4 +39,4 @@ const reducer = (state = store, action) => {
     }
 }
 
-export default reducer
+export default startupReducer

@@ -28,8 +28,6 @@ const IndexCarousel = (props) => {
         >
             {props.courses.map(course => {
                 let courseData = course[Object.keys(course)[0]]
-                console.log(courseData)
-
                 return (
                     <CourseCard title={courseData.title}
                                 key={courseData.title}

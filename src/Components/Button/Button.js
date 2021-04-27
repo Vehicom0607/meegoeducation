@@ -6,7 +6,6 @@ const MeeGoButton = props => {
     let Button;
     let ButtonClasses = [classes.Button]
     ButtonClasses = ButtonClasses.concat(props.className)
-    console.log(ButtonClasses)
     if (props.color === 'yellow') {
         ButtonClasses.push(classes.Yellow)
     } else if (props.color === 'red') {
