@@ -19,7 +19,8 @@ const App = props => {
     if (props.loading) {
         website = <Loading />
     } else if (props.error) {
-        website = <p>error</p>
+        website = <p>{props.error}</p>
+        alert(`${props.error}. Email elvisxiang06@gmail.com if this error persists.`)
     } else {
         website = (
             <Switch>
