@@ -8,6 +8,16 @@ import {connect} from "react-redux";
 import Loading from "./Containers/Loading/Loading";
 
 const App = props => {
+    const paths = []
+    props.courseData.forEach((course, index) => {
+            let courseData = course[Object.keys(course)[index]]
+            paths.push(courseData)
+        }
+    )
+    let courseRoutes = paths.map((course => {
+        console.log(course.description)
+        return <Route path={course.path} key={course.path} render={(course) => <p>work in progress</p>} />
+    }))
 
     useEffect(() => {
             props.onStartUp()
@@ -24,6 +34,7 @@ const App = props => {
     } else {
         website = (
             <Switch>
+                {courseRoutes}
                 <Route path="/courses" component={CoursesPage} />
                 <Route path="/" component={IndexPage} />
             </Switch>
@@ -39,7 +50,7 @@ const App = props => {
 
 const mapStateToProps = state => {
     return {
-        paths: state.courses.paths,
+        courseData: state.courses.courseData,
         error: state.courses.error,
         loading: state.courses.loading
     }

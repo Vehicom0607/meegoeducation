@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes'
-import startupStore from "./StartupStore";
+import startupStore from "./store";
 
 const startupReducer = (state = startupStore, action) => {
     switch (action.type) {
