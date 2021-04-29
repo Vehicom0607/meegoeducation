@@ -31,10 +31,10 @@ const IndexCarousel = (props) => {
                 return (
                     <CourseCard title={courseData.title}
                                 key={courseData.title}
-                                minAge={courseData.minAge}
-                                maxAge={courseData.maxAge}
-                                description={courseData.description}
-                                imgLink={courseData.imgLink}
+                                minAge={courseData.coursedata.minAge}
+                                maxAge={courseData.coursedata.maxAge}
+                                description={courseData.shortdescription}
+                                imgLink={courseData.coursedata.imgLink}
                                 path={courseData.path}
                     />
                 )

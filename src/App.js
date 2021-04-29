@@ -6,6 +6,7 @@ import * as StartupActions from './store/actions/StartupActions'
 import {useEffect} from "react";
 import {connect} from "react-redux";
 import Loading from "./Containers/Loading/Loading";
+import Course from "./Pages/Course/Course";
 
 const App = props => {
     const paths = []
@@ -15,8 +16,11 @@ const App = props => {
         }
     )
     let courseRoutes = paths.map((course => {
-        console.log(course.description)
-        return <Route path={course.path} key={course.path} render={(course) => <p>work in progress</p>} />
+        return (
+            <Route path={course.path} key={course.path}>
+                <Course courseData={course} />
+            </Route>
+        )
     }))
 
     useEffect(() => {
