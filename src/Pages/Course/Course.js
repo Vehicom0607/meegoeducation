@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import classes from "./Course.module.css";
 import MeeGoNavbar from "../../Components/Navbar/Navbar";
 import {Col, Container, Row} from "react-bootstrap";
-
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import 'font-awesome/css/font-awesome.min.css'
+import {faClock} from "@fortawesome/free-solid-svg-icons";
 
 class Course extends Component {
     render() {
@@ -25,9 +27,10 @@ class Course extends Component {
                             <img className="p-5" alt="random for now" src="https://source.unsplash.com/random/450x300" />
                         </Col>
                         <Col>
-                            <div className={classes.CategoryText + " my-5"}>
+                            <p className={classes.CategoryText + " my-5"}>
                                 {this.props.courseData.description}
-                            </div>
+                            </p>
+                            <p className={classes.CategoryText}><FontAwesomeIcon style={{color: '#2699FB'}} icon={faClock} /> 50 minutes per class</p>
                         </Col>
                     </Row>
                 </Container>
