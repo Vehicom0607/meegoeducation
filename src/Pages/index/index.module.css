@@ -94,7 +94,11 @@
 }
 /* Hi future me, fuck you i'm calling this class Yeet  */
 .Yeet {
-    flex-direction: row
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -107,8 +111,7 @@
     .TwoButtons {
         width: 100%;
     }
-    .Yeet {
-    }
+
 }
 
 

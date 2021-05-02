@@ -91,13 +91,9 @@ class IndexPage extends Component {
                                 <h2>Register Today!</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt eleifend eros et pulvinar. Morbi ante quam, consectetur malesuada dapibus ac, cursus eget erat. Proin eget sapien hendrerit, posuere dui ut, efficitur lacus. Maecenas magna dolor, facilisis eu ullamcorper sit amet, fermentum id lacus. Fusce eget egestas mi.</p>
                             </Col>
-                            <Col style={{display: 'flex', justifyContent: 'space-evenly'}} className={classes.Yeet}>
-                                <span style={{alignSelf: 'center'}}>
-                                    <MeeGoButton path="/courses" ml ReactLink color="yellow">VIEW COURSE</MeeGoButton>
-                                </span>
-                                <span style={{alignSelf: 'center'}}>
-                                    <MeeGoButton path="/courses" ml ReactLink color="red">CONTACT US</MeeGoButton>
-                                </span>
+                            <Col className={classes.Yeet}>
+                                <MeeGoButton style={{margin: '10px'}} path="/courses" ml ReactLink color="yellow">VIEW COURSE</MeeGoButton>
+                                <MeeGoButton style={{margin: '10px'}} path="/courses" ml ReactLink color="red">CONTACT US</MeeGoButton>
                             </Col>
                         </Row>
                     </div>
