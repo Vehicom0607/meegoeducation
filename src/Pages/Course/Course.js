@@ -3,8 +3,9 @@ import classes from "./Course.module.css";
 import MeeGoNavbar from "../../Components/Navbar/Navbar";
 import {Col, Container, Row} from "react-bootstrap";
 import 'font-awesome/css/font-awesome.min.css'
-import {faClock, faDollarSign, faStar, faUserFriends, faCalendarAlt} from "@fortawesome/free-solid-svg-icons";
+import {faClock, faDollarSign, faStar, faUserFriends, faCalendarAlt, faUser} from "@fortawesome/free-solid-svg-icons";
 import InfoDisplay from "../../Components/InfoDisplay/InfoDisplay";
+import MeeGoButton from "../../Components/Button/Button";
 
 class Course extends Component {
     render() {
@@ -23,19 +24,22 @@ class Course extends Component {
                     </Container>
                 </div>
                 <Container>
-                    <Row>
+                    <Row xs={1} lg={2}>
                         <Col>
-                            <img className="p-5" alt="random for now" src="https://source.unsplash.com/random/450x300" />
+                            <img className={classes.Image + " py-5"} alt="random for now" src="https://source.unsplash.com/random/450x300" />
                         </Col>
                         <Col className="my-5">
+                            {/* TODO: REORDER THESE */}
                             <InfoDisplay icon={faClock}>50 minutes per class</InfoDisplay>
                             <InfoDisplay icon={faDollarSign}>{`${courseData.price} for ${courseData.courses} Courses`}</InfoDisplay>
+                            <InfoDisplay icon={faUser}>{`Class Size: ${courseData.minSize}-${courseData.maxSize} Students`}</InfoDisplay>
                             <InfoDisplay icon={faStar}>{courseData.prerequisite}</InfoDisplay>
                             <InfoDisplay icon={faUserFriends}>{courseData.teacher}</InfoDisplay>
                             <InfoDisplay icon={faCalendarAlt}>{`Recommended ages: ${courseData.minAge}-${courseData.maxAge}`}</InfoDisplay>
-                            <p className={classes.CategoryText + " my-5"}>
+                            <p className={classes.CategoryText + " mt-3 mb-4"}>
                                 {this.props.courseData.description}
                             </p>
+                            <MeeGoButton ReactLink color="yellow" style={{textAlign: 'none'}} >Enroll Now</MeeGoButton>
                         </Col>
                     </Row>
                 </Container>

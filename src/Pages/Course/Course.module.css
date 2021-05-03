@@ -22,3 +22,8 @@
     font-weight: 700;
 }
 
+.Image {
+    max-width: 500px;
+    max-height: 400px;
+}
+
