@@ -7,10 +7,13 @@
 .CategoryText {
     color: #707070;
     font-size: 16px;
+    line-height: 16px;
     text-transform:capitalize;
     text-align: left;
     align-self: flex-end;
     max-width: 750px;
+    display: flex;
+    align-items: center;
 }
 
 .Title {
