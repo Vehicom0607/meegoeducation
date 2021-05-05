@@ -7,6 +7,7 @@ import {useEffect} from "react";
 import {connect} from "react-redux";
 import Loading from "./Containers/Loading/Loading";
 import Course from "./Pages/Course/Course";
+import axios from "axios";
 
 const App = props => {
     const paths = []
@@ -15,6 +16,7 @@ const App = props => {
             paths.push(courseData)
         }
     )
+
     let courseRoutes = paths.map((course => {
         return (
             <Route path={course.path} key={course.path}>
@@ -33,7 +35,7 @@ const App = props => {
     if (props.loading) {
         website = <Loading />
     } else if (props.error) {
-        website = <p>{props.error}</p>
+        website = <p>{props.error.message}</p>
         alert(`${props.error}. Email elvisxiang06@gmail.com if this error persists.`)
     } else {
         website = (

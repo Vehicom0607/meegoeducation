@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import classes from './Button.module.css'
 
 const MeeGoButton = props => {
+    console.log(props.style)
     let Button;
     let ButtonClasses = [classes.Button]
     ButtonClasses = ButtonClasses.concat(props.className)

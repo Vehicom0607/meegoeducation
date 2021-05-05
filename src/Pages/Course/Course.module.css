@@ -14,6 +14,7 @@
     max-width: 750px;
     display: flex;
     align-items: center;
+    padding: 0;
 }
 
 .Title {
@@ -25,5 +26,15 @@
 .Image {
     max-width: 500px;
     max-height: 400px;
+    width: 100%
+}
+
+.CourseTag {
+    display: flex;
+    align-content: flex-start;
+}
+
+.textAlignNone {
+    text-align: start;
 }
 

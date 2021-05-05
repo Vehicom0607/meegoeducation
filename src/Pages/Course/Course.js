@@ -16,11 +16,17 @@ class Course extends Component {
                 <div className={classes.BgGradient}>
                     <MeeGoNavbar />
                     <Container>
-                        <div style={{display: 'flex', alignContent: 'flex-start'}}>
-                            <h2 className={classes.Title}>{course.title}</h2>
-                            <p className={classes.CategoryText} style={{padding: '0 25px', color: '#f5f5f5'}}>{courseData.category}</p>
-                            <p className={classes.CategoryText} style={{color: '#f5f5f5'}}>{courseData.courses} Courses</p>
-                        </div>
+                        <Row xs={1} md={3}>
+                            <Col className={classes.CourseTag}>
+                                <h2 className={classes.Title}>{course.title}</h2>
+                            </Col>
+                            <Col className={classes.CourseTag}>
+                                <p className={classes.CategoryText} style={{color: '#f5f5f5'}}>{courseData.category}</p>
+                            </Col>
+                            <Col className={classes.CourseTag}>
+                                <p className={classes.CategoryText} style={{color: '#f5f5f5'}}>{courseData.courses} Courses</p>
+                            </Col>
+                        </Row>
                     </Container>
                 </div>
                 <Container>
@@ -39,7 +45,7 @@ class Course extends Component {
                             <p className={classes.CategoryText + " mt-3 mb-4"}>
                                 {this.props.courseData.description}
                             </p>
-                            <MeeGoButton ReactLink color="yellow" style={{textAlign: 'none'}} >Enroll Now</MeeGoButton>
+                            <MeeGoButton  style={{textAlign: 'start'}} path="/checkout" ReactLink color="yellow" >Enroll Now</MeeGoButton>
                         </Col>
                     </Row>
                 </Container>
