@@ -19,8 +19,8 @@ const MeeGoNavbar = () => {
                     <Link className={classes.NavLink} to="/about">About</Link>
                     <Link className={JoinLoginStyleMobile.join(" ")} to="/auth">Join</Link>
                     <Link className={JoinLoginStyleMobile.join(" ")} to="/auth">Login</Link>
-                    <MeeGoButton style={{margin: '0px 10px'}} className={["d-none", "d-md-flex"]} color="yellow" slim ReactLink path="/auth">Join</MeeGoButton>
-                    <MeeGoButton style={{margin: '0px 10x'}} className={["d-none", "d-md-flex"]} color="white"  slim ReactLink path="/auth">Login</MeeGoButton>
+                    <MeeGoButton style={{margin: '0px 10px'}} className={["d-none", "d-md-flex"]} color="yellow" slim ReactLink path="/login">Join</MeeGoButton>
+                    <MeeGoButton style={{margin: '0px 10x'}} className={["d-none", "d-md-flex"]} color="white"  slim ReactLink path="/login">Login</MeeGoButton>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

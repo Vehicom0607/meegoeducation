@@ -7,7 +7,8 @@ import {useEffect} from "react";
 import {connect} from "react-redux";
 import Loading from "./Containers/Loading/Loading";
 import Course from "./Pages/Course/Course";
-import axios from "axios";
+import AuthPage from "./Pages/Auth/Signup";
+import MeeGoCard from "./Components/Card/Card";
 
 const App = props => {
     const paths = []
@@ -41,8 +42,10 @@ const App = props => {
         website = (
             <Switch>
                 {courseRoutes}
-                <Route path="/courses" component={CoursesPage} />
-                <Route path="/" component={IndexPage} />
+                <Route path="/courses"><CoursesPage /></Route>
+                <Route path="/login"><AuthPage /></Route>
+                <Route path="/test"><MeeGoCard /></Route>
+                <Route path="/"><IndexPage /></Route>
             </Switch>
         )
     }

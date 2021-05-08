@@ -26,7 +26,7 @@
 .Image {
     max-width: 500px;
     max-height: 400px;
-    width: 100%
+    width: 100%;
 }
 
 .CourseTag {
@@ -37,4 +37,6 @@
 .textAlignNone {
     text-align: start;
 }
+
+
 
