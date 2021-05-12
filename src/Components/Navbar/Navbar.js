@@ -4,14 +4,25 @@ import {Link} from "react-router-dom";
 import classes from './Navbar.module.css'
 import MeeGoButton from "../Button/Button";
 import {connect} from "react-redux";
-
+import {useFirebase} from "react-redux-firebase";
+import { useHistory } from "react-router-dom";
 
 const MeeGoNavbar = props => {
     const JoinLoginStyleMobile = ["d-block", "d-lg-none", classes.NavLink]
-    console.log(props.uuid)
+    let history = useHistory()
+
+    const firebase = useFirebase()
+    const signOut = () => {
+        firebase.logout()
+            .then(() => {
+                history.push("/")
+                })
+            .catch(err => console.log(err))
+    }
+
     let buttons
     if (props.uuid) {
-        buttons = <MeeGoButton style={{margin: '0px 10x'}} className={["d-none", "d-md-flex"]} color="yellow"  slim ReactLink path="/login">Log Out</MeeGoButton>
+        buttons = <MeeGoButton style={{margin: '0px 10x'}} className={["d-none", "d-md-flex"]} color="yellow"  slim ReactLink path="/" onClick={() => signOut()} >Log Out</MeeGoButton>
     } else {
         buttons = (
             <React.Fragment>
@@ -39,10 +50,10 @@ const MeeGoNavbar = props => {
     );
 };
 
-const mapStatetoProps = state => {
+const mapStateToProps = state => {
     return {
         uuid: state.auth.auth.uid
     }
 }
 
-export default connect(mapStatetoProps)(MeeGoNavbar);
+export default connect(mapStateToProps)(MeeGoNavbar);
