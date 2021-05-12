@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionTypes'
-import startupStore from "./StartStore";
+import startupStore from "./CoursesStore";
 
-const startupReducer = (state = startupStore, action) => {
+const coursesReducer = (state = startupStore, action) => {
     switch (action.type) {
         case actionTypes.GET_COURSE_START:
             return {
@@ -39,4 +39,4 @@ const startupReducer = (state = startupStore, action) => {
     }
 }
 
-export default startupReducer
+export default coursesReducer

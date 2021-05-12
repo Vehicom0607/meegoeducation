@@ -4,25 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
-import {createStore, applyMiddleware, compose} from "redux";
-import thunk from "redux-thunk";
-import startupReducer from "./store/reducers/StartupReducer";
 import {HashRouter} from "react-router-dom";
 //TODO change this back to BrowserRouter before deployment
 import './MeeGoBootstrap.scss'
-
-const composeEnhancers = process.env.NODE_ENV === 'development' ?  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
-const store = createStore(startupReducer, composeEnhancers(
-    applyMiddleware(thunk)
-));
+import {ReactReduxFirebaseProvider} from "react-redux-firebase";
+import {rrfProps, store} from "./store/reducers/Reducer";
 
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <HashRouter>
-                <App />
-            </HashRouter>
+            <ReactReduxFirebaseProvider {...rrfProps} >
+                <HashRouter>
+                    <App />
+                </HashRouter>
+            </ReactReduxFirebaseProvider>
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')

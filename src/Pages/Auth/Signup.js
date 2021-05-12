@@ -1,11 +1,46 @@
-import React from 'react';
+import React, {useState} from 'react';
 import classes from './AuthStyles.module.css'
 import MeeGoNavbar from "../../Components/Navbar/Navbar";
 import {Button, Col, Container, Form} from "react-bootstrap";
 import MeeGoCard from "../../Components/Card/Card";
 import GoogleButton from "react-google-button";
+import {useFirebase} from "react-redux-firebase";
 
 const AuthPage = () => {
+    const firebase = useFirebase()
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+
+    const signInWithGoogle = () => {
+        firebase.login({
+            provider: 'google',
+            type: 'popup'
+        })
+            .then(response => {
+                console.log(response)
+            })
+
+    }
+
+    const signInWithEmail = (email, password) => {
+
+        try {
+            firebase.login({
+                email: email,
+                password: password
+            })
+                .then(r => console.log(r))
+        } catch {
+             firebase.createUser({
+                email: email,
+                password: password
+            })
+                 .then(r => {})
+        }
+
+    }
+
     return (
         <div>
             <div className={classes.BgGradient}>
@@ -21,23 +56,23 @@ const AuthPage = () => {
                         <GoogleButton
                             style={{margin: 'auto'}}
                             type="light"
-                            onClick={() => console.log("Login with google pressed")}
+                            onClick={() => signInWithGoogle()}
                         />
                         <p className="text-center my-2">or</p>
                         <Form>
                             <Form.Group>
-                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Control value={email} onChange={(event) => setEmail(event.target.value)} type="email" placeholder="Enter email" />
                             </Form.Group>
                             <Form.Row>
                                 <Form.Group as={Col}>
-                                    <Form.Control type="email" placeholder="Enter Password" />
+                                    <Form.Control value={password} onChange={(event) => setPassword(event.target.value)} type="password" placeholder="Enter Password" />
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridPassword">
-                                    <Form.Control type="password" placeholder="Confirm Password" />
+                                    <Form.Control value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} type="password" placeholder="Confirm Password" />
                                 </Form.Group>
                             </Form.Row>
-                            <Button onClick={() => console.log("Signup with google pressed")} block variant="primary" style={{color: '#f5f5f5f5'}}>Sign Up / Log In</Button>
+                            <Button onClick={() => signInWithEmail(email, password)} block variant="primary" style={{color: '#f5f5f5f5'}}>Sign Up / Log In</Button>
                         </Form>
                     </MeeGoCard>
                 </Container>

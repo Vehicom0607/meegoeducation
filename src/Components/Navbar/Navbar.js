@@ -3,11 +3,24 @@ import {Navbar, Nav} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import classes from './Navbar.module.css'
 import MeeGoButton from "../Button/Button";
+import {connect} from "react-redux";
 
 
-
-const MeeGoNavbar = () => {
+const MeeGoNavbar = props => {
     const JoinLoginStyleMobile = ["d-block", "d-lg-none", classes.NavLink]
+    console.log(props.uuid)
+    let buttons
+    if (props.uuid) {
+        buttons = <MeeGoButton style={{margin: '0px 10x'}} className={["d-none", "d-md-flex"]} color="yellow"  slim ReactLink path="/login">Log Out</MeeGoButton>
+    } else {
+        buttons = (
+            <React.Fragment>
+                <MeeGoButton style={{margin: '0px 10px'}} className={["d-none", "d-md-flex"]} color="yellow" slim ReactLink path="/login">Join</MeeGoButton>
+                <MeeGoButton style={{margin: '0px 10x'}} className={["d-none", "d-md-flex"]} color="white"  slim ReactLink path="/login">Login</MeeGoButton>
+            </React.Fragment>
+        )
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg" variant="light" className="px-lg-5">
             <Navbar.Brand><Link to="/"><img alt="logo" src="/Navbar/logo.png" height="60"/></Link></Navbar.Brand>
@@ -19,12 +32,17 @@ const MeeGoNavbar = () => {
                     <Link className={classes.NavLink} to="/about">About</Link>
                     <Link className={JoinLoginStyleMobile.join(" ")} to="/auth">Join</Link>
                     <Link className={JoinLoginStyleMobile.join(" ")} to="/auth">Login</Link>
-                    <MeeGoButton style={{margin: '0px 10px'}} className={["d-none", "d-md-flex"]} color="yellow" slim ReactLink path="/login">Join</MeeGoButton>
-                    <MeeGoButton style={{margin: '0px 10x'}} className={["d-none", "d-md-flex"]} color="white"  slim ReactLink path="/login">Login</MeeGoButton>
+                    {buttons}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
     );
 };
 
-export default MeeGoNavbar;
+const mapStatetoProps = state => {
+    return {
+        uuid: state.auth.auth.uid
+    }
+}
+
+export default connect(mapStatetoProps)(MeeGoNavbar);

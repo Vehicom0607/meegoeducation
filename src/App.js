@@ -2,7 +2,7 @@ import './App.css';
 import {Route, Switch} from "react-router-dom";
 import IndexPage from "./Pages/index";
 import CoursesPage from "./Pages/Courses/Courses";
-import * as StartupActions from './store/actions/StartupActions'
+import * as StartupActions from './store/actions/CoursesActions'
 import {useEffect} from "react";
 import {connect} from "react-redux";
 import Loading from "./Containers/Loading/Loading";
@@ -59,9 +59,9 @@ const App = props => {
 
 const mapStateToProps = state => {
     return {
-        courseData: state.courses.courseData,
-        error: state.courses.error,
-        loading: state.courses.loading
+        courseData: state.courses.courses.courseData,
+        error: state.courses.courses.error,
+        loading: state.courses.courses.loading
     }
 }
 
