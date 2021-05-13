@@ -5,9 +5,12 @@ import {Button, Col, Container, Form} from "react-bootstrap";
 import MeeGoCard from "../../Components/Card/Card";
 import GoogleButton from "react-google-button";
 import {useFirebase} from "react-redux-firebase";
+import {connect} from "react-redux";
+import {useHistory} from "react-router-dom";
 
-const AuthPage = () => {
+const AuthPage = props => {
     const firebase = useFirebase()
+    const history = useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
@@ -17,10 +20,9 @@ const AuthPage = () => {
             provider: 'google',
             type: 'popup'
         })
-            .then(response => {
-                console.log(response)
+            .then(() => {
+                history.push("/")
             })
-
     }
 
     const signInWithEmail = (email, password) => {
@@ -36,9 +38,13 @@ const AuthPage = () => {
                 email: email,
                 password: password
             })
-                 .then(r => {})
+                 .then(() => {})
         }
 
+    }
+
+    if (props.loggedIn) {
+        history.push("/")
     }
 
     return (
@@ -81,4 +87,10 @@ const AuthPage = () => {
     );
 };
 
-export default AuthPage;
+const mapStateToProps = state => {
+    return {
+        loggedIn: !!state.auth.auth.uid
+    }
+}
+
+export default connect(mapStateToProps)(AuthPage);
