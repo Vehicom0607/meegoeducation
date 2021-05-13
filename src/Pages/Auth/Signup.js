@@ -32,7 +32,7 @@ const AuthPage = props => {
                 email: email,
                 password: password
             })
-                .then(r => console.log(r))
+                .then(() => {})
         } catch {
              firebase.createUser({
                 email: email,
