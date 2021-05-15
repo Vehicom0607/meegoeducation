@@ -1,4 +1,4 @@
-import classes from '../../Pages/Course/Course.module.css'
+import classes from '../../../Pages/Course/Course.module.css'
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 

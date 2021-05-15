@@ -8,7 +8,9 @@ import {connect} from "react-redux";
 import Loading from "./Containers/Loading/Loading";
 import Course from "./Pages/Course/Course";
 import AuthPage from "./Pages/Auth/Signup";
-import MeeGoCard from "./Components/Card/Card";
+import MeeGoCard from "./Components/UI/Card/Card";
+import AdminPage from "./Pages/Admin/Admin";
+import AdminRoute from "./Components/Route/AdminRoute";
 
 const App = props => {
     const paths = []
@@ -26,6 +28,7 @@ const App = props => {
         )
     }))
 
+
     useEffect(() => {
             props.onStartUp()
         },
@@ -42,6 +45,7 @@ const App = props => {
         website = (
             <Switch>
                 {courseRoutes}
+                <AdminRoute path="/admin" uid={props.uid} ><AdminPage /></AdminRoute>
                 <Route path="/courses"><CoursesPage /></Route>
                 <Route path="/login"><AuthPage /></Route>
                 <Route path="/test"><MeeGoCard /></Route>
@@ -61,7 +65,8 @@ const mapStateToProps = state => {
     return {
         courseData: state.courses.courses.courseData,
         error: state.courses.courses.error,
-        loading: state.courses.courses.loading
+        loading: state.courses.courses.loading,
+        uid: state.auth.auth.uid
     }
 }
 

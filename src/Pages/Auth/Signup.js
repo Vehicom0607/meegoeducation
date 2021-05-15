@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import classes from './AuthStyles.module.css'
 import MeeGoNavbar from "../../Components/Navbar/Navbar";
 import {Button, Col, Container, Form} from "react-bootstrap";
-import MeeGoCard from "../../Components/Card/Card";
+import MeeGoCard from "../../Components/UI/Card/Card";
 import GoogleButton from "react-google-button";
 import {useFirebase} from "react-redux-firebase";
 import {connect} from "react-redux";
@@ -25,6 +25,14 @@ const AuthPage = props => {
             })
     }
 
+    const signUpUser = (email, password) => {
+        firebase.createUser({
+            email: email,
+            password: password
+        })
+            .then(() => {})
+    }
+
     const signInWithEmail = (email, password) => {
 
         try {
@@ -32,13 +40,9 @@ const AuthPage = props => {
                 email: email,
                 password: password
             })
-                .then(() => {})
+                .catch(() => signUpUser(email, password))
         } catch {
-             firebase.createUser({
-                email: email,
-                password: password
-            })
-                 .then(() => {})
+            signUpUser(email, password)
         }
 
     }

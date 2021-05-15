@@ -4,8 +4,8 @@ import MeeGoNavbar from "../../Components/Navbar/Navbar";
 import {Col, Container, Row} from "react-bootstrap";
 import 'font-awesome/css/font-awesome.min.css'
 import {faClock, faDollarSign, faStar, faUserFriends, faCalendarAlt, faUser} from "@fortawesome/free-solid-svg-icons";
-import InfoDisplay from "../../Components/InfoDisplay/InfoDisplay";
-import MeeGoButton from "../../Components/Button/Button";
+import InfoDisplay from "../../Components/UI/InfoDisplay/InfoDisplay";
+import MeeGoButton from "../../Components/UI/Button/Button";
 import SyllabusDisplay from "./SyllabusDisplay/SyllabusDisplay";
 
 const Course = props => {

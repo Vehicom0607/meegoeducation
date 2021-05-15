@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css'
-import CourseCard from "../../../Components/CourseCard/CourseCard";
+import CourseCard from "../../../Components/UI/CourseCard/CourseCard";
 
 const responsive = {
     desktop: {

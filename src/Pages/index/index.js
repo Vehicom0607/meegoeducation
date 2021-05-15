@@ -3,7 +3,7 @@ import MeeGoNavbar from "../../Components/Navbar/Navbar";
 import classes from './index.module.css'
 import {Col, Container, Image, Row} from "react-bootstrap";
 import IndexCarousel from "./Carousel/Carousel";
-import MeeGoButton from "../../Components/Button/Button";
+import MeeGoButton from "../../Components/UI/Button/Button";
 import {connect} from "react-redux";
 
 class IndexPage extends Component {

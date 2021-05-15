@@ -2,7 +2,7 @@ import React from 'react';
 import {Navbar, Nav} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import classes from './Navbar.module.css'
-import MeeGoButton from "../Button/Button";
+import MeeGoButton from "../UI/Button/Button";
 import {connect} from "react-redux";
 import {useFirebase} from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
@@ -24,12 +24,7 @@ const MeeGoNavbar = props => {
     if (props.uuid) {
         buttons = <MeeGoButton style={{margin: '0px 10x'}} className={["d-none", "d-md-flex"]} color="yellow"  slim ReactLink path="/" onClick={() => signOut()} >Log Out</MeeGoButton>
     } else {
-        buttons = (
-            <React.Fragment>
-                <MeeGoButton style={{margin: '0px 10px'}} className={["d-none", "d-md-flex"]} color="yellow" slim ReactLink path="/login">Join</MeeGoButton>
-                <MeeGoButton style={{margin: '0px 10x'}} className={["d-none", "d-md-flex"]} color="white"  slim ReactLink path="/login">Login</MeeGoButton>
-            </React.Fragment>
-        )
+        buttons = <MeeGoButton style={{margin: '0px 10px'}} className={["d-none", "d-md-flex"]} color="yellow" slim ReactLink path="/login">Sign Up / Sign In</MeeGoButton>
     }
 
     return (
