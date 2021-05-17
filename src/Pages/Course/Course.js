@@ -10,7 +10,8 @@ import SyllabusDisplay from "./SyllabusDisplay/SyllabusDisplay";
 
 const Course = props => {
     const course = props.courseData
-    const courseData = props.courseData.coursedata
+    const courseData = props.courseData.courseData
+    console.log(props.courseData)
     return (
         <div>
             <div className={classes.BgGradient}>

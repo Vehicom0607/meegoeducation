@@ -27,15 +27,15 @@ const IndexCarousel = (props) => {
             infinite
         >
             {props.courses.map(course => {
-                let courseData = course[Object.keys(course)[0]]
+                console.log(course)
                 return (
-                    <CourseCard title={courseData.title}
-                                key={courseData.title}
-                                minAge={courseData.coursedata.minAge}
-                                maxAge={courseData.coursedata.maxAge}
-                                description={courseData.shortdescription}
-                                imgLink={courseData.coursedata.imgLink}
-                                path={courseData.path}
+                    <CourseCard title={course.title}
+                                key={course.title}
+                                minAge={course.courseData.minAge}
+                                maxAge={course.courseData.maxAge}
+                                description={course.shortDescription}
+                                imgLink={course.courseData.imgLink}
+                                path={course.path}
                     />
                 )
             })}

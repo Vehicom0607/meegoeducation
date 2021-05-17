@@ -6,33 +6,24 @@ const coursesReducer = (state = startupStore, action) => {
         case actionTypes.GET_COURSE_START:
             return {
                 ...state,
-                courses: {
-                    ...state.courses,
-                    loading: true,
-                    error: null
-                }
+                loading: true,
+                error: null
             }
         case actionTypes.GET_COURSE_SUCCESS:
-            const newCourseData = []
-            newCourseData.push(action.courseData)
+            console.log(action.courseData)
+            let courseData = Object.keys(action.courseData).map((key) => [action.courseData[key]]);
+            courseData = courseData.map(obj => obj[0])
             return {
                 ...state,
-                courses: {
-                    ...state.courses,
-                    loading: false,
-                    error: null,
-                    courseData: newCourseData
-
-                }
+                loading: false,
+                error: null,
+                courseData: courseData
             }
         case actionTypes.GET_COURSE_ERROR:
             return {
                 ...state,
-                courses: {
-                    ...state.courses,
-                    loading: false,
-                    error: action.error
-                }
+                loading: false,
+                error: action.error
             }
         default:
             return state

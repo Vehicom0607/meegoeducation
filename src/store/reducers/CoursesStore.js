@@ -1,8 +1,6 @@
 const startupStore = {
-    courses: {
-        loading: false,
-        courseData: [],
-        error: null
-    }
+    loading: false,
+    courseData: [],
+    error: null
 }
 export default startupStore

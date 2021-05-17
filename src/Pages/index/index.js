@@ -236,7 +236,7 @@ class IndexPage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        courses: state.courses.courses
+        courses: state.courses
     }
 }
 

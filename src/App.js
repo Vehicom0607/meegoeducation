@@ -14,9 +14,8 @@ import AdminRoute from "./Components/Route/AdminRoute";
 
 const App = props => {
     const paths = []
-    props.courseData.forEach((course, index) => {
-            let courseData = course[Object.keys(course)[index]]
-            paths.push(courseData)
+    props.courseData.forEach((course) => {
+            paths.push(course)
         }
     )
 
@@ -31,8 +30,7 @@ const App = props => {
 
     useEffect(() => {
             props.onStartUp()
-        },
-        []
+        }
     )
 
     let website
@@ -63,9 +61,9 @@ const App = props => {
 
 const mapStateToProps = state => {
     return {
-        courseData: state.courses.courses.courseData,
-        error: state.courses.courses.error,
-        loading: state.courses.courses.loading,
+        courseData: state.courses.courseData,
+        error: state.courses.error,
+        loading: state.courses.loading,
         uid: state.auth.auth.uid
     }
 }
