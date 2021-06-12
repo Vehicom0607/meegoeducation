@@ -30,7 +30,7 @@ const App = props => {
 
     useEffect(() => {
             props.onStartUp()
-        }
+        }, []
     )
 
     let website

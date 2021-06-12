@@ -10,7 +10,6 @@ const coursesReducer = (state = startupStore, action) => {
                 error: null
             }
         case actionTypes.GET_COURSE_SUCCESS:
-            console.log(action.courseData)
             let courseData = Object.keys(action.courseData).map((key) => [action.courseData[key]]);
             courseData = courseData.map(obj => obj[0])
             return {

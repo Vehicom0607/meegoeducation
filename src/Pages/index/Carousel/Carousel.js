@@ -27,7 +27,6 @@ const IndexCarousel = (props) => {
             infinite
         >
             {props.courses.map(course => {
-                console.log(course)
                 return (
                     <CourseCard title={course.title}
                                 key={course.title}
