@@ -2,6 +2,7 @@ import firebase from "firebase";
 import coursesReducer from "./CoursesReducer";
 import {firebaseReducer} from "react-redux-firebase";
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
+import userReducer from "./userReducer";
 import thunk from "redux-thunk";
 
 const rrfConfig = {
@@ -22,7 +23,8 @@ firebase.initializeApp(fbConfig)
 
 const reducers = {
     courses: coursesReducer,
-    auth: firebaseReducer
+    auth: firebaseReducer,
+    user: userReducer
 }
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ?  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
@@ -33,7 +35,7 @@ const store = createStore(combineReducers(reducers), composeEnhancers(
 const rrfProps = {
     firebase,
     config: rrfConfig,
-    dispatch: store.dispatch
+    dispatch: store.dispatch,
 }
 
 export {rrfProps, store}

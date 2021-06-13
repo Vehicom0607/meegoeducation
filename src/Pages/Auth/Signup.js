@@ -7,7 +7,7 @@ import GoogleButton from "react-google-button";
 import {useFirebase} from "react-redux-firebase";
 import {connect} from "react-redux";
 import {useHistory} from "react-router-dom";
-import axios from "axios";
+import {create_user_data} from "../../store/actions/userActions";
 
 const AuthPage = props => {
     const firebase = useFirebase()
@@ -31,7 +31,7 @@ const AuthPage = props => {
             email: email,
             password: password
         })
-            .then(r => console.log("pog"))
+            .catch(() => alert("Signup Failed"))
     }
 
     const signInWithEmail = (email, password) => {
@@ -47,6 +47,7 @@ const AuthPage = props => {
         }
 
     }
+
 
     if (props.loggedIn) {
         history.push("/")
@@ -94,7 +95,9 @@ const AuthPage = props => {
 
 const mapStateToProps = state => {
     return {
-        loggedIn: !!state.auth.auth.uid
+        loggedIn: !!state.auth.auth.uid,
+        uid: state.auth.auth.uid,
+        email: state.auth.auth.email
     }
 }
 
