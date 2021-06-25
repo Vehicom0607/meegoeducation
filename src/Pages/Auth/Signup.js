@@ -31,21 +31,15 @@ const AuthPage = props => {
             email: email,
             password: password
         })
-            .catch(() => alert("Signup Failed"))
+            .catch((err) => alert("Signup Failed, please try again. Contact elvisxiang06@gmail.com if the problem persists" + err))
     }
 
     const signInWithEmail = (email, password) => {
-
-        try {
-            firebase.login({
-                email: email,
-                password: password
-            })
-                .catch((err) => err.code==="auth/user-not-found"?signUpUser(email, password):console.log(err))
-        } catch {
-            signUpUser(email, password)
-        }
-
+        firebase.login({
+            email: email,
+            password: password
+        })
+            .catch((err) => err.code==="auth/user-not-found"?signUpUser(email, password):console.log(err))
     }
 
 

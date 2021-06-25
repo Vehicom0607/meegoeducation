@@ -5,11 +5,25 @@ import {Col, Container, Image, Row} from "react-bootstrap";
 import IndexCarousel from "./Carousel/Carousel";
 import MeeGoButton from "../../Components/UI/Button/Button";
 import {connect} from "react-redux";
+import axios from "axios";
 
 class IndexPage extends Component {
 
     componentDidMount() {
         document.title = "MeeGo Education"
+        if (this.props.uid) {
+            console.log(this.props.uid)
+            axios.get(`https://meegoeducation-da33a-default-rtdb.firebaseio.com/users/${this.props.uid}.json`)
+                .then((res) => {
+                    if (res.data == null) {
+                        axios.post(`https://meegoeducation-da33a-default-rtdb.firebaseio.com/users/${this.props.uid}.json`, {
+                            uid: this.props.uid,
+                            email: this.props.email,
+                            courses: []
+                        }).catch(err => alert(err))
+                    }
+                })
+        }
     }
 
 
@@ -236,7 +250,9 @@ class IndexPage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        courses: state.courses
+        courses: state.courses,
+        uid: state.auth.auth.uid,
+        email: state.auth.auth.email
     }
 }
 

@@ -11,6 +11,7 @@ import AuthPage from "./Pages/Auth/Signup";
 import MeeGoCard from "./Components/UI/Card/Card";
 import AdminPage from "./Pages/Admin/Admin";
 import AdminRoute from "./Components/Route/AdminRoute";
+import axios from "axios";
 
 const App = props => {
     const paths = []
@@ -32,6 +33,8 @@ const App = props => {
             props.onStartUp()
         }, []
     )
+
+
 
     let website
     if (props.loading) {
@@ -64,7 +67,8 @@ const mapStateToProps = state => {
         courseData: state.courses.courseData,
         error: state.courses.error,
         loading: state.courses.loading,
-        uid: state.auth.auth.uid
+        uid: state.auth.auth.uid,
+        email: state.auth.auth.email
     }
 }
 
