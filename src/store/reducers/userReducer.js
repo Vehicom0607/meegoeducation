@@ -1,6 +1,6 @@
 import * as actionTypes from '../actions/actionTypes'
 
-const initialStore = {
+const initialStore =  {
     courses: [],
     loading: false,
     error: null
