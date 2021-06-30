@@ -11,7 +11,6 @@ import AuthPage from "./Pages/Auth/Signup";
 import MeeGoCard from "./Components/UI/Card/Card";
 import AdminPage from "./Pages/Admin/Admin";
 import AdminRoute from "./Components/Route/AdminRoute";
-import axios from "axios";
 
 const App = props => {
     const paths = []
