@@ -15,9 +15,6 @@ const MeeGoButton = props => {
     } else if (props.color === 'white') {
         ButtonClasses.push(classes.White)
     }
-    if (props.AddClass) {
-        ButtonClasses.push(props.AddClass)
-    }
     if (props.slim) {
         ButtonClasses.push(classes.Slim)
     }

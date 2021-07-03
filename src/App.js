@@ -1,4 +1,3 @@
-import './App.css';
 import {Route, Switch} from "react-router-dom";
 import IndexPage from "./Pages/index";
 import CoursesPage from "./Pages/Courses/Courses";

@@ -7,7 +7,6 @@ import GoogleButton from "react-google-button";
 import {useFirebase} from "react-redux-firebase";
 import {connect} from "react-redux";
 import {useHistory} from "react-router-dom";
-import {create_user_data} from "../../store/actions/userActions";
 
 const AuthPage = props => {
     const firebase = useFirebase()
